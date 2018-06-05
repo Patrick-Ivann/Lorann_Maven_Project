@@ -23,7 +23,7 @@ public class Bullet extends ModelElement implements IBullet {
 	}
 
 	/* (non-Javadoc)
-	 * checks between bullet and  Hero or Vilain and removes sprites when touched
+	 * checks collision between bullet and  Hero or Vilain and removes sprites when touched
 	 * @see model.IBullet#checkCollisions(int, int)
 	 */
 	public  boolean checkCollisions(int i, int y) {
