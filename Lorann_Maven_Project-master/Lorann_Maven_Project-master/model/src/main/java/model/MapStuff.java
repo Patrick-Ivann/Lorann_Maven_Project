@@ -29,13 +29,11 @@ public class MapStuff implements Imaps, IMapstuff {
 	
 	
 	/* 
-	 * Find the n
+	 * Find the next position 
 	 * @see model.IMapstuff#testNextPosition(int, int)
 	 */
 	public IModelElement testNextPosition( int x, int y) {
-		//System.out.println( "pk ça marche pas "+ getListObject());
 		for (IModelElement object : listObject) {
-			//System.out.println(object + "dans la test");
 			
 			if(((ModelElement) object).getX()==x && ((ModelElement) object).getY()==y ){
 				   return (ModelElement) object;
@@ -48,11 +46,7 @@ public class MapStuff implements Imaps, IMapstuff {
 		return null;
 	}
 
-	/*public void play(){
-		for(IModelElement object:listObject){
-			object.move();
-		    }
-	    }*/
+	
 	
 	/* (non-Javadoc)
 	 * @see model.IMapstuff#getListObject()
@@ -83,7 +77,8 @@ public class MapStuff implements Imaps, IMapstuff {
 	}
 
 	
-	/* (non-Javadoc)
+	/* 
+	 * Create the Hero Lorann and allow him to move
 	 * @see model.IMapstuff#test(java.lang.String)
 	 */
 	public void test(String string) {
@@ -94,11 +89,11 @@ public class MapStuff implements Imaps, IMapstuff {
 
 				setHero((IHero) iModelElement);
 				getHero().setMaps(this);
-				//System.out.println(getHero() + "getHero dans la fonction test dans mapStuff");
 				System.out.println(getHero().getX() + "dans la fonction test on retourne le X hero ainsi que le y" +getHero().getY() );
 			}
 		}
 
+	
 		switch (string)
 		{
 		case "left" : //q
@@ -147,7 +142,8 @@ public class MapStuff implements Imaps, IMapstuff {
 	}
 
 	
-	/* (non-Javadoc)
+	/* 
+	 * 
 	 * @see model.IMapstuff#shootGivenCoordAndHeading(int, int, java.lang.String)
 	 */
 	public void shootGivenCoordAndHeading(int x, int y, String heading) {
