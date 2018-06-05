@@ -11,13 +11,13 @@ public class MapStuff implements Imaps, IMapstuff {
 	private IHero hero; 
 	
 	/**
-	 * 
+	 * Arraylist which contain all objects
 	 * @param listObject
 	 */
 	public MapStuff(ArrayList<IModelElement> listObject) {
 
 		 MapStuff mapS=this;
-		this.listObject = listObject ;
+		 this.listObject = listObject ;
 		
 		for(IModelElement object:this.listObject){
 			object.setTheGivenObjectOntheMap(mapS);
@@ -29,7 +29,7 @@ public class MapStuff implements Imaps, IMapstuff {
 	
 	
 	/* 
-	 * Find the next position 
+	 * 
 	 * @see model.IMapstuff#testNextPosition(int, int)
 	 */
 	public IModelElement testNextPosition( int x, int y) {
@@ -143,6 +143,7 @@ public class MapStuff implements Imaps, IMapstuff {
 
 	
 	/* 
+	 * direction of the spell
 	 * 
 	 * @see model.IMapstuff#shootGivenCoordAndHeading(int, int, java.lang.String)
 	 */

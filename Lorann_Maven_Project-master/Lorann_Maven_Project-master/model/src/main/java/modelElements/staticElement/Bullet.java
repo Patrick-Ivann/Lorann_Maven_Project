@@ -23,6 +23,7 @@ public class Bullet extends ModelElement implements IBullet {
 	}
 
 	/* (non-Javadoc)
+	 * checks between bullet and  Hero or Vilain and removes sprites when touched
 	 * @see model.IBullet#checkCollisions(int, int)
 	 */
 	public  boolean checkCollisions(int i, int y) {
@@ -65,7 +66,7 @@ public class Bullet extends ModelElement implements IBullet {
 	}
 
 	/* (non-Javadoc)
-	 * make the spell 
+	 * make the spell go in the other direction if it encounter something	
 	 * @see model.IBullet#opposedHeading(java.lang.String)
 	 */
 	public String opposedHeading(String heading) {
@@ -87,8 +88,8 @@ public class Bullet extends ModelElement implements IBullet {
 	
 	
 	    case "right":
-	                setOpposedHeading("left");
-	                return("left");
+	            setOpposedHeading("left");
+	            return("left");
 	
 	    default:
 	        return null;

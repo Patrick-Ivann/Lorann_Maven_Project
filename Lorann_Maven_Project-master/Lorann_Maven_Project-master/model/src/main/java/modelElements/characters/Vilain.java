@@ -31,7 +31,7 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 	private IMapstuff maps;
 	
 	/**
-	 * load THe sprite of the daemon and put in his x and y
+	 * load tHe sprite of the daemon and put in his x and y
 	 * @param x
 	 * @param y
 	 */
@@ -168,7 +168,7 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 
 
 	/* (non-Javadoc)
-	 * check if the Vilain cqn move and don't hit something
+	 * check if the Vilain can move and don't hit something
 	 * @see model.IVilain#given2CoordononateCheckIfencountersomethingElseMoveTheCharactere(int, int)
 	 */
 	public void given2CoordononateCheckIfencountersomethingElseMoveTheCharactere(int x, int y){ // les x et y sont les next
