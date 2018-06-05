@@ -1,0 +1,13 @@
+model\Example.class
+model\IModel.class
+model\IVilain.class
+view\IView.class
+model\Imaps.class
+model\IBullet.class
+view\IImagePanel.class
+model\IModelElement.class
+controller\IController.class
+model\IHero.class
+model\IMapstuff.class
+view\IFenetre.class
+model\IStaticElement.class
