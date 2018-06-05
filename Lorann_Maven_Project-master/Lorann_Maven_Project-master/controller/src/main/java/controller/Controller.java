@@ -14,6 +14,7 @@ public class Controller implements IController {
 	 * @param model
 	 * @param vue
 	 * Used to set values 
+	 * declaration of the constructor : Controler
 	 */
 	public Controller(IModel model, IView vue, ArrayList<IModelElement> list) {
 
@@ -37,22 +38,18 @@ public class Controller implements IController {
 		
 		switch (keyChar)
 		{
-		        case 'q' : //q
-		        			    		//System.out.println("qqqqqqqqq");
-		        			    		//this.model.getMapStuff().test();
-		        			    		//System.out.println(this.model.getMapStuff().getHero());
+		        case 'q' : //keypress q
+		        			    		
 		        			    		
 
-		    		//this.model.getMapStuff().getHero().walkLeft();
 		    		
 		    		this.model.getMapStuff().test("left");
 
 		            
 		            break;
 		            
-		        case 'z' : // z
+		        case 'z' : //keypress z
 		            
-//		    		this.model.getMapStuff().getHero().walkUp();
 		    		
 		    		this.model.getMapStuff().test("up");
 
@@ -60,16 +57,14 @@ public class Controller implements IController {
 		        	
 		            break;
 		            
-		        case 's' : //s
-		    		///this.model.getMapStuff().getHero().walkDown();
+		        case 's' : //keypress s
 		    		
 		    		this.model.getMapStuff().test("down");
 
 		            
 		            break;
 		            
-		        case 'd' :  //d
-		    		//this.model.getMapStuff().getHero().walkRight();
+		        case 'd' :  //keypress d
 		    		
 		    		this.model.getMapStuff().test("right");
 
@@ -78,8 +73,7 @@ public class Controller implements IController {
 		            break;
 
 		            
-		        case ' ' : // space
-		    		//this.model.getMapStuff().getHero().walkLeft();;
+		        case ' ' : // keypress space
 		        	
 		    		this.model.getMapStuff().test("shoot");
 
@@ -89,43 +83,16 @@ public class Controller implements IController {
 		}
 	}
 	
-
-
-//	public void givenListofObjectSendThemTotheviewForRefresh (ArrayList<IModelElement> listobj) {
-//		
-//		vue.getFenetre().getJeu().givenArraYListOfAllobjectCurrentlyOntheMapRefresh(listobj);    
-//	}
-	
-	
-	
 	public void  setTheGameUpq(){
 	
 		while(true) {
-			
-		
-					//this.givenListofObjectSendThemTotheviewForRefresh((getModel().getMapGen().getListObject()));
-						//setListobj( getModel().getMapGenuse().mapgeneratorReading(getModel().getMapGenuse().getMapFromBdd()));
-
-			//System.out.println(getListobj());
-			//getModel().getMapGen().getListObject();
-
-			//vue.getFenetre().getJeu().givenArraYListOfAllobjectCurrentlyOntheMapRefresh(getModel().getMapGenuse().mapgeneratorReading(getModel().getMapGenuse().getMapFromBdd()));    
 
 			vue.getFenetre().getJeu().givenArraYListOfAllobjectCurrentlyOntheMapRefresh(this.getListobj());
 			
 		}
 		
 	}
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
+		
 	public ArrayList<IModelElement> getListobj() {
 		return listobj;
 	}
