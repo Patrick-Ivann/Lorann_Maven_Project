@@ -26,6 +26,11 @@ public class Hero extends ModelElement implements charactere, IHero {
 
 
 
+	/**
+	 * Load our hero
+	 * @param x
+	 * @param y
+	 */
 	public Hero(int x, int y) {
 
 		super(x+15, y+5);
@@ -56,47 +61,49 @@ public class Hero extends ModelElement implements charactere, IHero {
 	}
 
 
-	public void checkIfencountersomething(int x, int y){ // les x et y sont les next
+	/* (non-Javadoc)
+	 * Check collision for Hero
+	 * @see model.IHero#checkIfencountersomething(int, int)
+	 */
+	public void checkIfencountersomething(int x, int y){ // the x and the y are the next
 		
-		//System.out.println( this.maps+"fdsfds");
 
 		if (maps.testNextPosition(x, y) != null) {
 
 			IModelElement hittedornot = this.maps.testNextPosition(x, y);
 			
-			System.out.println(((ModelElement) hittedornot).getClassString() + "das le checkif ");
+			System.out.println(((ModelElement) hittedornot).getClassString() + "in the checkif ");
 
 
 			switch (((ModelElement) hittedornot).getClassString()) {
 
 
 
-			case "trois": // wall
+			case "wall": 
 				
-				System.out.println("on a tapé du trois");
+				System.out.println("we hit the wall");
 				break;
 
 
-			case "un": // energy
+			case "energy":
 				
-				System.out.println("on a tapé du un");
-
+				System.out.println("onwe hit the energy");
 
 				// on passe le state de l'energy  à true et on enleve de la map
 
 				break;
 
-			case "doors":	//doors
+			case "doors":
 				// si on a de l'energie on lance une méthode d'ouverture et si o en  a pas on lance la méthode de fin de jeu
 				
-				System.out.println("on a tapé du deux");
+				System.out.println("we hit the doors");
 
 				
 				break;
 
 			case "vilain": // Vilain
 				
-				System.out.println("on a tapé du vilain");
+				System.out.println("we hit the vilain");
 
 
 				break;
@@ -112,71 +119,77 @@ public class Hero extends ModelElement implements charactere, IHero {
 	}
 
 	
+	/**
+	 * @param stuff
+	 */
 	public void registerWorld(MapStuff stuff) {
 		this.maps=stuff;
 		((MapStuff) this.maps).setHero(this);
 	}
 
 
+/* (non-Javadoc)
+ * @see model.IHero#lastposition()
+ */
 public int lastposition() {
 	return storedPositionHero.get(storedPositionHero.lastKey());
 }
 
 
 
-/*public void fire(){
-	getMapstuff().shootGivenCoordAndHeading(getX(), getY(), getHeading());
-}*/
 
+/* (non-Javadoc)
+ * @see modelElements.characters.charactere#walk()
+ */
 @Override
 public void walk() {
 	// TODO Auto-generated method stub
 
 }
 
+/* (non-Javadoc)
+ * Move Up
+ * @see modelElements.characters.charactere#walkUp()
+ */
 @Override
 public void walkUp() {
 	// TODO Auto-generated method stub
 
 	this.checkIfencountersomething((this.getY() - 1), (this.getX()) );
-	System.out.println(this.getY() + " y dans le walkup");
-	//this.setHasMoved();
-	//this.storedPositionHero.put((this.getY() - 1), this.getX());
+	System.out.println(this.getY() + " y in the walkup");
 	this.setHeading("up");
 
 
 }
 
 
-
-
-
-
-
-
-
+/* (non-Javadoc)
+ * Move Down
+ * @see modelElements.characters.charactere#walkDown()
+ */
 @Override
 public void walkDown() {
 
 	this.checkIfencountersomething(this.getX(), this.getY()+1);
-	//this.setHasMoved();
-	//this.storedPositionHero.put((this.getY() + 1), this.getX());
 	this.setHeading("down");
-	System.out.println(this.getY() + " Y dans le walkdown");
+	System.out.println(this.getY() + " Y in the walkdown");
 
 
 
 }
 
+/* (non-Javadoc)
+ * Move Right
+ * @see modelElements.characters.charactere#walkRight()
+ */
 @Override
 public void walkRight() {
 
 	this.checkIfencountersomething(this.getX()+1, this.getY());
 
 	this.setX(this.getX() + 1);
-	System.out.println(getX() + "X dans le walkright");
+	System.out.println(getX() + "X in the walkright");
 	this.setHasMoved();
-	//this.storedPositionHero.put((this.getY()), this.getX()+1);
 	this.setHeading("right");
 
 
@@ -185,20 +198,25 @@ public void walkRight() {
 
 }
 
+/* (non-Javadoc)
+ * Move left
+ * @see modelElements.characters.charactere#walkLeft()
+ */
 @Override
 public void walkLeft() {
 
 	this.checkIfencountersomething(this.getX()+1, this.getY());
 	this.setX(this.getX() - 1);
-	System.out.println(getX() + "X dans le  walkleft");
-	//this.setHasMoved();
-	//this.storedPositionHero.put((this.getY()), this.getX()-1);
+	System.out.println(getX() + "X in the walkleft");
 	this.setHeading("left");
 	
 
 
 }
 
+/* (non-Javadoc)
+ * @see modelElements.characters.charactere#collied()
+ */
 @Override
 public boolean collied() {
 	return this.stateLife = false;
@@ -207,6 +225,9 @@ public boolean collied() {
 }
 
 
+/* (non-Javadoc)
+ * @see modelElements.characters.charactere#isAlive()
+ */
 @Override
 public void isAlive() {
 	// TODO Auto-generated method stub
@@ -216,10 +237,16 @@ public void isAlive() {
 
 
 
+/**
+ * @return
+ */
 public boolean isStateLife() {
 	return stateLife;
 }
 
+/**
+ * 
+ */
 public void setHasMoved() {
 	// TODO Auto-generated method stub
 
@@ -228,12 +255,18 @@ public void setHasMoved() {
 }
 
 
+/**
+ * @param mapS
+ */
 public void setTheGivenObjectOntheMap1(MapStuff mapS) {
 	// TODO Auto-generated method stub
 	
 }
 
 
+/* (non-Javadoc)
+ * @see model.IModelElement#sprite()
+ */
 @Override
 public void sprite() {
 	// TODO Auto-generated method stub
@@ -243,6 +276,9 @@ public void sprite() {
 
 
 
+/* (non-Javadoc)
+ * @see model.IModelElement#unSetSprites(boolean)
+ */
 @Override
 public void unSetSprites(boolean b) {
 	// TODO Auto-generated method stub
@@ -250,26 +286,41 @@ public void unSetSprites(boolean b) {
 }
 
 
+/* (non-Javadoc)
+ * @see modelElements.characters.charactere#getHeading()
+ */
 public String getHeading() {
 	return heading;
 }
 
 
+/* (non-Javadoc)
+ * @see modelElements.characters.charactere#setHeading(java.lang.String)
+ */
 public void setHeading(String heading) {
 	this.heading = heading;
 }
 
 
+/**
+ * @return
+ */
 public int getTypeMob() {
 	return typeMob;
 }
 
 
+/**
+ * @param typeMob
+ */
 public void setTypeMob(int typeMob) {
 	this.typeMob = typeMob;
 }
 
 
+/* (non-Javadoc)
+ * @see model.IModelElement#setMaps(model.IMapstuff)
+ */
 @Override
 public void setMaps(IMapstuff maps) {
 	
@@ -278,6 +329,9 @@ public void setMaps(IMapstuff maps) {
 }
 
 
+/* (non-Javadoc)
+ * @see model.IModelElement#getMaps()
+ */
 @Override
 public MapStuff getMaps() {
 	// TODO Auto-generated method stub
@@ -287,6 +341,9 @@ public MapStuff getMaps() {
 
 
 
+/* (non-Javadoc)
+ * @see model.IHero#registerWorld(model.IMapstuff)
+ */
 @Override
 public void registerWorld(IMapstuff maps) {
 	// TODO Auto-generated method stub
@@ -296,6 +353,9 @@ public void registerWorld(IMapstuff maps) {
 
 
 
+/* (non-Javadoc)
+ * @see model.IHero#fire()
+ */
 @Override
 public void fire() {
 	// TODO Auto-generated method stub
@@ -303,23 +363,14 @@ public void fire() {
 }
 
 
+/* (non-Javadoc)
+ * @see model.IModelElement#setTheGivenObjectOntheMap(model.IMapstuff)
+ */
 @Override
 public void setTheGivenObjectOntheMap(IMapstuff mapS) {
 	// TODO Auto-generated method stub
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

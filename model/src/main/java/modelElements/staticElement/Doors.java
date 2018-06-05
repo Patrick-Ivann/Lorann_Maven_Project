@@ -9,6 +9,11 @@ import model.MapStuff;
 
 public class Doors extends StaticElement {
 	
+	/**
+	 * load the Doors and place it
+	 * @param x
+	 * @param y
+	 */
 	public Doors(int x, int y) {
 
 		super(x, y);
@@ -23,6 +28,9 @@ public class Doors extends StaticElement {
 	
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#sprite()
+	 */
 	@Override
 	public void sprite() {
 		// TODO Auto-generated method stub
@@ -33,30 +41,37 @@ public class Doors extends StaticElement {
 
 	
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#unSetSprites(boolean)
+	 */
 	@Override
 	public void unSetSprites(boolean b) {
 		// TODO Auto-generated method stub
 		
 	}
 
-
 	
-
-
-
-	
+	/* (non-Javadoc)
+	 * @see model.IModelElement#getMaps()
+	 */
 	@Override
 	public MapStuff getMaps() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#setTheGivenObjectOntheMap(model.IMapstuff)
+	 */
 	@Override
 	public void setTheGivenObjectOntheMap(IMapstuff mapS) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#setMaps(model.IMapstuff)
+	 */
 	@Override
 	public void setMaps(IMapstuff maps) {
 		// TODO Auto-generated method stub

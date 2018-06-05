@@ -28,6 +28,10 @@ public abstract class ModelElement implements IModelElement{
 	
 
 
+	/**
+	 * @param x2
+	 * @param y2
+	 */
 	public ModelElement(int x2, int y2) {
 
 		setX(x2);
@@ -36,47 +40,65 @@ public abstract class ModelElement implements IModelElement{
 
 		setClassString((getClass().toString()));
 
-
-
 		
 	}
 	
+	/**
+	 * @param y
+	 */
 	public void setItOnTheMap(IModelElement  y) {
 		this.mapstuff= (MapStuff) y;
 	}
 
 
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#getX()
+	 */
 	public int getX() {
 		return x;
 	}
 
+	/**
+	 * @return
+	 */
 	public IMapstuff getMapstuff() {
 		return mapstuff;
 	}
 
 
-
-
+	/**
+	 * @param mapstuff
+	 */
 	public void setMapstuff(IMapstuff mapstuff) {
 		this.mapstuff = mapstuff;
 	}
 
-
-
-
+	/**
+	 * @param x
+	 */
 	public void setX(int x) {
 		this.x = x;
 	}
 
+	/**
+	 * @return
+	 */
 	public int getY() {
 		return y;
 	}
 
+	/**
+	 * @param y
+	 */
 	public void setY(int y) {
 		this.y = y;
 	}
 	
+	/**
+	 * @param x
+	 * @param added
+	 */
 	public void addX(int x, int added) {
 		this.x+=added;
 		
@@ -99,18 +121,30 @@ public abstract class ModelElement implements IModelElement{
 //		return null;
 //	}
 
+	/**
+	 * @return
+	 */
 	public String getClassString() {
 		return classString;
 	}
 
+	/**
+	 * @param classString
+	 */
 	public void setClassString(String classString) {
 		this.classString = classString;
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#getSpritesIcon()
+	 */
 	public Image getSpritesIcon() {
 		return spritesIcon;
 	}
 
+	/**
+	 * @param spritesIcon
+	 */
 	public void setSpritesIcon(Image spritesIcon) {
 		this.spritesIcon = spritesIcon;
 	}

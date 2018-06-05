@@ -1,0 +1,10 @@
+controller
+main
+model
+model.DAO_
+model.dao
+modelElements
+modelElements.characters
+modelElements.staticElement
+modelElements.staticElement.wall
+view

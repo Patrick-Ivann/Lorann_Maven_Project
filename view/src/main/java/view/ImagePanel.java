@@ -36,10 +36,14 @@ public class ImagePanel extends JPanel implements KeyListener, IImagePanel{
 	
 	
 	
-	  public ImagePanel(Fenetre f_jeu) {
+	  /**
+	   * Paint in our Frame 
+	 * @param f_jeu
+	 */
+	public ImagePanel(Fenetre f_jeu) {
 		  this.f = f_jeu;
 		  
-		 // this.setBackground(Color.BLACK);
+		 
 		  this.paint(getGraphics());
 	  }
 	  
@@ -47,13 +51,16 @@ public class ImagePanel extends JPanel implements KeyListener, IImagePanel{
 	  
 	  
 
+	/* 
+	 * Load all image and give their x and y 
+	 * @see javax.swing.JComponent#paint(java.awt.Graphics)
+	 */
 	public void paint(Graphics g) {
 		super.paint(g);
-		//time = new Timer();
+		
 		this.setBackground(Color.BLACK);
 		
 		try {
-			//System.out.println(this.listePleine.size() + "size de la liste dans la méthode paint");
 			for(IModelElement m: listePleine ){
 				 g.drawImage(((IModelElement) m).getSpritesIcon(), 
 						 ((IModelElement)  m).getX()*32,
@@ -64,80 +71,49 @@ public class ImagePanel extends JPanel implements KeyListener, IImagePanel{
 			e.printStackTrace();
 		}
 		
-		//System.out.println("sqdgsqhgdhgsq");
 		
-			 /*
-		 	
-		*/
 		
 		}
 	
 	
-	  public void givenArraYListOfAllobjectCurrentlyOntheMapRefresh(ArrayList <IModelElement> listobj) {	 
+	  /* 
+	   * Display all character stocked in the ArrayList
+	 * @see view.IImagePanel#givenArraYListOfAllobjectCurrentlyOntheMapRefresh(java.util.ArrayList)
+	 */
+	public void givenArraYListOfAllobjectCurrentlyOntheMapRefresh(ArrayList <IModelElement> listobj) {	 
 		   this.setListobject(listobj); 
-		   
-		//System.out.println(listobj + "dans la vues");
-		   
-		   
-		 /*for (IModelElement lookHero : listobj) {
-			
-			if (lookHero instanceof Hero) {
-				
-				
-				System.out.println("yrfvqsvfhsdvfuhsqugfyqg");
-			}
-			
-		}*/
-
 			listePleine = new ArrayList<IModelElement>(listobject);
-			//System.out.println(listePleine.size());
-			   this.repaint(); 
+			  this.repaint(); 
 		   }
 		
 	
-//	private static Move Movement(final int pressed) {
-//        Move userOrder;
-//        switch (pressed) {
-//            case KeyEvent.VK_RIGHT:
-//                userOrder = Move.RIGHT;
-//                break;
-//            case KeyEvent.VK_LEFT:
-//                userOrder = Move.LEFT;
-//                break;
-//            case KeyEvent.VK_UP:
-//                userOrder = Move.UP;
-//                break;
-//            case KeyEvent.VK_DOWN:
-//                userOrder = Move.DOWN;
-//                break;
-//            case KeyEvent.VK_F:
-//                userOrder = Move.FIRE;
-//                break;
-//            default:
-//                userOrder = Move.INOP;
-//                break;
-//        }
-//        return userOrder;
-//    }
-//  
+
 	 
+	/* 
+	 * Detection of the key which is pressed to allow movement
+	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
+	 */
 	@Override
     public final void keyPressed(final KeyEvent keyEvent) {
 		
-		
-		//this.getController().givenKeyCodeTriggerActionOnModel(keyEvent.getKeyCode());
-
+	
 		 if(getController() != null) {
 			  getController().givenKeyCodeTriggerActionOnModel(keyEvent.getKeyChar());
-			  //System.out.println(keyEvent.getKeyChar());
+			
 			}
 	}
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyTyped(KeyEvent arg0) {
 
@@ -147,24 +123,36 @@ public class ImagePanel extends JPanel implements KeyListener, IImagePanel{
 
 
 
+	/* (non-Javadoc)
+	 * @see view.IImagePanel#getListobject()
+	 */
 	public ArrayList<IModelElement> getListobject() {
 		return listobject;
 	}
 
 
 
+	/* (non-Javadoc)
+	 * @see view.IImagePanel#setListobject(java.util.ArrayList)
+	 */
 	public void setListobject(ArrayList<IModelElement> listobject) {
 		this.listobject = listobject;
 	}
 
 
 
+	/* (non-Javadoc)
+	 * @see view.IImagePanel#getController()
+	 */
 	public IController getController() {
 		return controller;
 	}
 
 
 
+	/* (non-Javadoc)
+	 * @see view.IImagePanel#setController(controller.IController)
+	 */
 	public void setController(IController controller) {
 		this.controller = controller;
 	}

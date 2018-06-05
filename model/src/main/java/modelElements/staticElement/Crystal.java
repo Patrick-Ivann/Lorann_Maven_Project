@@ -9,6 +9,11 @@ import model.MapStuff;
 
 public class Crystal  extends StaticElement {
 
+	/**
+	 * load the crystal and place it
+	 * @param x
+	 * @param y
+	 */
 	public Crystal(int x, int y) {
 		
 		super(x, y);
@@ -24,30 +29,45 @@ public class Crystal  extends StaticElement {
 	
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#sprite()
+	 */
 	@Override
 	public void sprite() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see modelElements.ModelElement#getX()
+	 */
 	@Override
 	public int getX() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+	/* (non-Javadoc)
+	 * @see modelElements.ModelElement#setX(int)
+	 */
 	@Override
 	public void setX(int x) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see modelElements.ModelElement#getY()
+	 */
 	@Override
 	public int getY() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+	/* (non-Javadoc)
+	 * @see modelElements.ModelElement#setY(int)
+	 */
 	@Override
 	public void setY(int y) {
 		// TODO Auto-generated method stub

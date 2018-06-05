@@ -10,6 +10,11 @@ import model.MapStuff;
 
 public class Purse extends StaticElement implements IModelElement{
 
+	/**
+	 * load the purse and place it
+	 * @param x
+	 * @param y
+	 */
 	public Purse(int x, int y) {
 		// TODO Auto-generated constructor stub
 		
@@ -54,6 +59,9 @@ public class Purse extends StaticElement implements IModelElement{
 
 
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#unSetSprites(boolean)
+	 */
 	@Override
 	public void unSetSprites(boolean b) {
 		// TODO Auto-generated method stub
@@ -64,6 +72,9 @@ public class Purse extends StaticElement implements IModelElement{
 
 	
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#sprite()
+	 */
 	@Override
 	public void sprite() {
 		// TODO Auto-generated method stub
@@ -72,18 +83,27 @@ public class Purse extends StaticElement implements IModelElement{
 
 	
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#getMaps()
+	 */
 	@Override
 	public MapStuff getMaps() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#setTheGivenObjectOntheMap(model.IMapstuff)
+	 */
 	@Override
 	public void setTheGivenObjectOntheMap(IMapstuff mapS) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#setMaps(model.IMapstuff)
+	 */
 	@Override
 	public void setMaps(IMapstuff maps) {
 		// TODO Auto-generated method stub

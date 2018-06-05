@@ -30,12 +30,11 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 	private String Heading;
 	private IMapstuff maps;
 	
-	
-	
-	
-	
-
-
+	/**
+	 * load tHe sprite of the daemon and put in his x and y
+	 * @param x
+	 * @param y
+	 */
 	public Vilain(int x, int y) {
 		
 		super(x, y);
@@ -54,16 +53,25 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 	
 	
 
+	/* (non-Javadoc)
+	 * @see modelElements.characters.charactere#isAlive()
+	 */
 	public void isAlive() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IVilain#die()
+	 */
 	public void die() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see modelElements.characters.charactere#walk()
+	 */
 	public void walk() {
 		// TODO Auto-generated method stub
 		
@@ -71,6 +79,10 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 	
 	
 
+	/* (non-Javadoc)
+	 * Make the Vilain move up
+	 * @see modelElements.characters.charactere#walkUp()
+	 */
 	@Override
 	public void walkUp() {
 		
@@ -89,6 +101,10 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 
 
 
+	/* (non-Javadoc)
+	 * Make the Vilain move down
+	 * @see modelElements.characters.charactere#walkDown()
+	 */
 	@Override
 	public void walkDown() {
 		// TODO Auto-generated method stub
@@ -106,6 +122,10 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 
 
 
+	/* (non-Javadoc)
+	 * Make the Vilain move right
+	 * @see modelElements.characters.charactere#walkRight()
+	 */
 	@Override
 	public void walkRight() {
 		// TODO Auto-generated method stub
@@ -125,6 +145,10 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 
 
 
+	/* (non-Javadoc)
+	 * Make the Vilain move left
+	 * @see modelElements.characters.charactere#walkLeft()
+	 */
 	@Override
 	public void walkLeft() {
 		// TODO Auto-generated method stub
@@ -143,6 +167,10 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 
 
 
+	/* (non-Javadoc)
+	 * check if the Vilain can move and don't hit something
+	 * @see model.IVilain#given2CoordononateCheckIfencountersomethingElseMoveTheCharactere(int, int)
+	 */
 	public void given2CoordononateCheckIfencountersomethingElseMoveTheCharactere(int x, int y){ // les x et y sont les next
 
 		if (getMapstuff().testNextPosition(x, y) != null) {
@@ -193,45 +221,54 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 	}
 
 	
-
-
-
-
-
-
-
-
 	
-	
+	/* (non-Javadoc)
+	 * @see modelElements.characters.charactere#getHeading()
+	 */
 	public String getHeading() {
 		return Heading;
 	}
 
 
 
+	/* (non-Javadoc)
+	 * @see modelElements.characters.charactere#setHeading(java.lang.String)
+	 */
 	public void setHeading(String heading) {
 		Heading = heading;
 	}
 
 
+	/* (non-Javadoc)
+	 * @see modelElements.ModelElement#getX()
+	 */
 	@Override
 	public int getX() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+	/* (non-Javadoc)
+	 * @see modelElements.ModelElement#setX(int)
+	 */
 	@Override
 	public void setX(int x) {
 
 		this.x = x ;
 	}
 
+	/* (non-Javadoc)
+	 * @see modelElements.ModelElement#getY()
+	 */
 	@Override
 	public int getY() {
 
 		return this.y;
 	}
 
+	/* (non-Javadoc)
+	 * @see modelElements.ModelElement#setY(int)
+	 */
 	@Override
 	public void setY(int y) {
 
@@ -240,16 +277,25 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 	}
 
 
+	/**
+	 * @return
+	 */
 	public int getTypeMob() {
 		return typeMob;
 	}
 
+	/**
+	 * @param typeMob
+	 */
 	public void setTypeMob(int typeMob) {
 		this.typeMob = typeMob;
 	}
 
 
 
+	/* (non-Javadoc)
+	 * @see modelElements.characters.charactere#collied()
+	 */
 	@Override
 	public boolean collied() {
 		// TODO Auto-generated method stub
@@ -257,23 +303,18 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 	}
 
 
-
-	
-
-
-
+	/* (non-Javadoc)
+	 * @see model.IModelElement#sprite()
+	 */
 	@Override
 	public void sprite() {
 		// TODO Auto-generated method stub
 		
 	}
 
-
-
-	
-
-
-
+	/* (non-Javadoc)
+	 * @see model.IModelElement#unSetSprites(boolean)
+	 */
 	@Override
 	public void unSetSprites(boolean b) {
 		// TODO Auto-generated method stub
@@ -281,8 +322,9 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 	}
 
 
-
-
+	/* (non-Javadoc)
+	 * @see model.IModelElement#getMaps()
+	 */
 	@Override
 	public IMapstuff getMaps() {
 		// TODO Auto-generated method stub
@@ -291,6 +333,9 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 
 
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#setTheGivenObjectOntheMap(model.IMapstuff)
+	 */
 	@Override
 	public void setTheGivenObjectOntheMap(IMapstuff mapS) {
 		// TODO Auto-generated method stub
@@ -299,6 +344,9 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 
 
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#setMaps(model.IMapstuff)
+	 */
 	@Override
 	public void setMaps(IMapstuff maps) {
 		// TODO Auto-generated method stub
@@ -307,21 +355,14 @@ public class Vilain extends ModelElement implements charactere, IVilain {
 
 
 
-
-
-
+	/* (non-Javadoc)
+	 * @see model.IVilain#lastposition()
+	 */
 	@Override
 	public int lastposition() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-
-
-	
-
-	
-	
-	
 
 }

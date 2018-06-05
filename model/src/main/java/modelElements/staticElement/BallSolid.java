@@ -9,6 +9,10 @@ import model.IModelElement;
 
 public class BallSolid extends StaticElement implements IModelElement{
 
+	/**
+	 * @param x
+	 * @param y
+	 */
 	public BallSolid(int x, int y) {
 		
 		super(x, y);
@@ -29,6 +33,9 @@ public class BallSolid extends StaticElement implements IModelElement{
 	
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#sprite()
+	 */
 	@Override
 	public void sprite() {
 		// TODO Auto-generated method stub
@@ -37,18 +44,27 @@ public class BallSolid extends StaticElement implements IModelElement{
 
 	
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#setTheGivenObjectOntheMap(model.IMapstuff)
+	 */
 	@Override
 	public void setTheGivenObjectOntheMap(IMapstuff mapS) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#unSetSprites(boolean)
+	 */
 	@Override
 	public void unSetSprites(boolean b) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#setMaps(model.IMapstuff)
+	 */
 	@Override
 	public void setMaps(IMapstuff maps) {
 		// TODO Auto-generated method stub
@@ -58,6 +74,9 @@ public class BallSolid extends StaticElement implements IModelElement{
 	
 	
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#getMaps()
+	 */
 	@Override
 	public IMapstuff getMaps() {
 		// TODO Auto-generated method stub
