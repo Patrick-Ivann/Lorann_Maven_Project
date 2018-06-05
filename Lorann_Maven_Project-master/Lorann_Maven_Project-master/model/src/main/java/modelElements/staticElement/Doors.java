@@ -10,7 +10,7 @@ import model.MapStuff;
 public class Doors extends StaticElement {
 	
 	/**
-	 * load the Doors and place 
+	 * load the Doors and place it
 	 * @param x
 	 * @param y
 	 */

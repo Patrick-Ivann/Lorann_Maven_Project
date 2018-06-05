@@ -10,7 +10,7 @@ import model.MapStuff;
 public class Crystal  extends StaticElement {
 
 	/**
-	 * load the crystal and place 
+	 * load the crystal and place it
 	 * @param x
 	 * @param y
 	 */

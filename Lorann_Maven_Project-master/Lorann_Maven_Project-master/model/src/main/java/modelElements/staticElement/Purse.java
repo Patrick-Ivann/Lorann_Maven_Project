@@ -11,7 +11,7 @@ import model.MapStuff;
 public class Purse extends StaticElement implements IModelElement{
 
 	/**
-	 * load the purse and place 
+	 * load the purse and place it
 	 * @param x
 	 * @param y
 	 */

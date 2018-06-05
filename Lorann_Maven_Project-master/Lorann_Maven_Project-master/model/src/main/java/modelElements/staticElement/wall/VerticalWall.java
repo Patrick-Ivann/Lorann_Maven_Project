@@ -9,6 +9,11 @@ import model.MapStuff;
 
 public class VerticalWall extends Wall {
 	
+	/**
+	 * load Vertical wall and place it
+	 * @param x
+	 * @param y
+	 */
 	public VerticalWall(int x, int y) {
 
 		super(x, y);
@@ -25,6 +30,9 @@ public class VerticalWall extends Wall {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#sprite()
+	 */
 	@Override
 	public void sprite() {
 		// TODO Auto-generated method stub
@@ -35,6 +43,9 @@ public class VerticalWall extends Wall {
 
 	
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#unSetSprites(boolean)
+	 */
 	@Override
 	public void unSetSprites(boolean b) {
 		// TODO Auto-generated method stub
@@ -44,18 +55,27 @@ public class VerticalWall extends Wall {
 
 	
 	
+	/* (non-Javadoc)
+	 * @see model.IModelElement#getMaps()
+	 */
 	@Override
 	public IMapstuff getMaps() {
 		// TODO Auto-generated method stub
 		return mapstuff;
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#setTheGivenObjectOntheMap(model.IMapstuff)
+	 */
 	@Override
 	public void setTheGivenObjectOntheMap(IMapstuff mapS) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModelElement#setMaps(model.IMapstuff)
+	 */
 	@Override
 	public void setMaps(IMapstuff maps) {
 		// TODO Auto-generated method stub
